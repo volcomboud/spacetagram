@@ -1,9 +1,12 @@
 import {useState} from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut,signInWithEmailAndPassword} from "firebase/auth";
-import {auth} from '../lib/firebase';
+import {auth, db} from '../lib/firebase';
+import {addDoc, collection} from "firebase/firestore";
 
 
 export default function SignUp(props){
+
+    const usersCollectionRef = collection(db, 'users')
 
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
@@ -20,6 +23,8 @@ export default function SignUp(props){
 
         try {
             const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+            await addDoc(usersCollectionRef, {registerEmail});
+
         }catch (error){
             console.log(error.message);
         }
