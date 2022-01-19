@@ -6,7 +6,7 @@ import {useState} from "react";
 import PostFeed from "../components/PostFeed";
 import {db, postToJSON} from "../lib/firebase";
 import Loader from "../components/Loader";
-import {collection, getDocs, limit, orderBy, query} from "firebase/firestore";
+import {collection, getDocs, limit, orderBy, query, startAfter} from "firebase/firestore";
 
 const LIMIT = 5;
 const dailyCollectionRef = collection(db,'nasadaily')
@@ -26,7 +26,6 @@ export async function getServerSideProps(context){
 
 }
 export default function Home(props) {
-    console.log(props.data)
     const [posts, setPosts] = useState(props.data);
     const [postsEnd, setPostsEnd] =useState(false);
     const [loading, setLoading] = useState(false);
@@ -35,15 +34,13 @@ export default function Home(props) {
         setLoading(true)
         const last = posts[posts.length -1];
 
-        const cursor = typeof last.date;
+        const cursor = typeof last.date ==="string";
 
-        const query = db
-            .collectionGroup('nasadaily')
-            .orderBy('date', 'desc')
-            .startAfter(cursor)
-            .limit(LIMIT);
+        const morePostQuery = query(dailyCollectionRef,orderBy('date','desc'),startAfter(cursor),limit(LIMIT))
 
-        const newPosts = (await query.get().docs.map((doc) => doc.data));
+        const querySnapshot = await getDocs(morePostQuery);
+        const newPosts = querySnapshot.docs.map((doc) => ({...doc.data()}));
+
 
         setPosts(posts.concat(newPosts));
         setLoading(false);
@@ -59,27 +56,14 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-          <strong>ICI</strong>
         <NasaFetcher/>
           <PostFeed posts={posts}/>
-          {!loading && !postsEnd && <button onClick={getMorePosts}>show more</button>}
+          {!loading && !postsEnd &&
+            <button className="btn-black btn-show " onClick={getMorePosts}>show more</button>}
             <Loader show={loading}/>
-          {postsEnd && 'You\'ve reach the edge of the galaxy'}
+          {postsEnd && <label className="text-white text-3xl py-5">'You've reach the edge of the galaxy'</label>}
+
       </main>
-
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }

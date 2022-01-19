@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg: #48CFC5;
+  --color-text: #08090a;
+  --color-blue: #3b49df;
+  --color-red: #df3b3b;
+  --color-green: #3bdf72;
+  /*--color-gray: #b5bdc4; */
+  --color-gray: #4AA2B8;
+}
 html,
 body {
   padding: 0;
@@ -97,9 +106,12 @@ button[disabled]{
   cursor: not-allowed;
 }
 
-button.btn-blue {
-  background-color: var(--color-blue);
+button.btn-black {
+  background-color: black;
   color: white;
+}
+button.btn-show{
+  border: 1px solid white;
 }
 
 button.btn-red {
@@ -110,16 +122,6 @@ button.btn-red {
 button.btn-green {
   background-color: var(--color-green);
   color: white;
-}
-
-button.btn-google {
-  background-color: white;
-  color: var(--color-text);
-}
-
-.btn-google img {
-  width: 30px;
-  margin-right: 10px;
 }
 
 button.btn-logo {
@@ -144,14 +146,18 @@ button.btn-logo {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.loader-div{
+
+}
 /* Cards */
 
 .card {
   padding: 2rem;
   margin: 1rem 0;
-  background-color: #FFFF8D;
+  background-color: #FDF2FF;
   border: 1px solid var(--color-gray);
   border-radius: 8px;
+  max-width: 1000px;
 }
 
 .card footer {
@@ -169,4 +175,60 @@ button.btn-logo {
 .card-info {
   color: white;
   background: var(--color-blue);
+}
+.card-container{
+  margin-top: 10px
+
+}
+.card-explanation{
+  background-color: #EBE1ED ;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.card-title{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+}
+.card-date{
+  font-size: 1.3rem;
+}
+.heart{
+  font-size: 1.5rem;
+}
+.btn-logger{
+  margin-left: 40%;
+}
+.logger{
+  background-color: #EBE1ED;
+  min-width: 700px;
+  min-height: 400px;
+  max-height: 400px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 25px;
+  padding-top: 10%;
+  font-size: 1.5rem;
+  color: black;
+}
+/* footer */
+
+.footer {
+  height: 70px;
+  max-height: 70px;
+  width: 100%;
+  background: black;
+  bottom: 0;
+  padding: 0 10vw;
+  border-top: 1px solid var(--color-gray);
+  z-index: 99;
+  border-color: white;
+}
+.footer-text{
+  color: #eaeaea;
+  text-align: center;
+  font-size: 1.1rem;
+  padding-top: 20px;
 }

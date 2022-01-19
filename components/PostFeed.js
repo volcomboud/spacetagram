@@ -1,3 +1,8 @@
+import {useState} from "react";
+import AuthCheck from "./AuthCheck";
+import HeartButton from './HeartButton';
+import Link from "next/link";
+
 
 export default function PostFeed(posts){
     return posts ? posts.posts.map((post) => <PostItem post={post} key={post.date} />):null;
@@ -5,18 +10,44 @@ export default function PostFeed(posts){
 
 function PostItem({post}){
     console.log(post, 'ICI')
+    const [show, setShow]= useState(false)
+
+    //TODO a    EFFACER
+    const postRef = 0
+    const showMore = () =>{
+        if(show)setShow(false);
+        else setShow(true)
+
+    }
     return(
         <div className="card">
-            <a>
-               <strong>{post.date}</strong>
-            </a>
-            <h2>
-                <a>{post.title}</a>
+           <strong className="card-date push-left">{post.date}</strong>
+            <h2 className="card-title">
+                {post.title}
             </h2>
             <img src={post.url} alt={post.title}/>
+            {show?
+                <div className="py-5 card-container">
+                    <div className="card-explanation">
+                        <p className="explanation-p">{post.explanation}</p>
+                    </div>
+                    <button className="btn-black" onClick={showMore}>Show less</button>
+                </div>
+                :
+                <button className="btn-black" onClick={showMore}>Description</button>
+
+            }
             <footer>
-                <span className="push-left">
-                    💗{post.heartCount || 0} Love
+                <span className="push-left heart">
+                    👽{post.heartCount || 0}
+                    <AuthCheck
+                        fallback={
+                        <Link href="/signup">
+                            <button className="btn-black" >👽 Sign in </button>
+                        </Link>
+                        }>
+                        <HeartButton postRef={postRef}/>
+                    </AuthCheck>
                 </span>
             </footer>
         </div>

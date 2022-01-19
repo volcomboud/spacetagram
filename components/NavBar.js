@@ -27,7 +27,7 @@ export default function NavBar(){
                 {user===null ?
                 <li>
                     <Link href="/signup">
-                        <button className="btn-blue">Sign in</button>
+                        <button className="btn-black">Sign in</button>
                     </Link>
                 </li>
                     :
@@ -37,7 +37,7 @@ export default function NavBar(){
                 </li>
                 <li>
                     <Link href="/signup">
-                        <button className="btn-blue">Sign out</button>
+                        <button className="btn-black">Sign out</button>
                     </Link>
                 </li>
                     </ul>
