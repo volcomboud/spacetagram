@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Front End Developer Intern Challenge - Summer 2022
 
-## Getting Started
+Spacestagram: Image-sharing from the final frontier
 
-First, run the development server:
+For the purposes of this project, Shopify is extending our mission to Make Commerce Better for Everyone to include the whole entire universe. Please build us an app to help share photos from one of NASA’s image APIs.
+The Challenge
+We need a webpage that can pull images, and allow the user to “like” and “unlike” their favourite images.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+We'd like a simple to use interface that makes it easy to:
+Fetch data from one of NASA’s APIs and display the resulting images (more details under Technical Requirements)
+Display descriptive data for each image (for example: title, date, description, etc.)
+Like an image
+Unlike an image
+Technical requirements
+Search results should come from NASA’s free APIs, for which you’ll need a free API key from https://api.nasa.gov -
+you do not need to enter anything more than your first name, last name, and email address (i.e. application url is not required)
+We’ve provided screenshots below of demo apps we built using the Astronomy Picture of the Day or Mars Rover Photos APIs (along with Shopify’s open source React component library: Polaris).
+You are free to use any NASA API you like
+You are free to use any front end framework/component library you like (or none at all!)
+Each image result should list at least a title, date of capture (ideally in earth_date) and a button to “like” that image.
+Each image can be “liked”, and a user should be able to undo their “like”
+The HTML that ends up being served client-side should be accessible and semantic (MDN reference)
+Example screenshots (:
+Extras
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+There is a lot to be improved on here, you can polish the required features by crafting a nicer design, or improve the app by adding new features! Choose something that you feel best showcases your passion and skills.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+If you need inspiration, here are examples of what you can work on. If you work on these ideas, we recommend choosing only one or two.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Save likes if the user leaves or reloads the page
+Animate the “like” action (might we suggest a heart?)
+Add a loading state while we wait for NASA’s API to return data
+Create shareable links for each image
+Add a date-picker to be able to browse photos starting from a specific date
+Submission
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Please submit your application via “Apply Now” and make sure you include:
+A link to your hosted code so we can test it (Free hosting available via: CodeSandbox, Github pages, Netlify and Heroku)
+A link to your Github repository containing the code
+Any other notes you'd like us to consider alongside the page
