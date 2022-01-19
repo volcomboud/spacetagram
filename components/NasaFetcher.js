@@ -51,10 +51,12 @@ export default function NasaFetcher(){
                             console.log("picture of the day added to the database")
                         })
                     });
-                }else
-                querySnapshot.forEach((doc) => {
-                    console.log(doc.id, " => ", doc.data());
-                })
+                }else {
+                    querySnapshot.forEach((doc) => {
+                        console.log(doc.id, " => ", doc.data());
+                    })
+                    console.log("Database is up to date...")
+                }
             }
 
         //TODO ICI peut etre delete

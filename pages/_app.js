@@ -8,11 +8,12 @@ function MyApp({ Component, pageProps }) {
     const userData = useUserData();
 
   return (
-      <UserContext.Provider value={userData}>
-        {/*<NavBar />*/}
-        <Component {...pageProps} />
-        <Toaster/>
-      </UserContext.Provider>
+    <UserContext.Provider value={userData}>
+        <NavBar />
+
+            <Component {...pageProps} />
+            <Toaster/>
+    </UserContext.Provider>
   );
 }
 
