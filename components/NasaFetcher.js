@@ -19,7 +19,6 @@ export default function NasaFetcher(){
 
 
     useEffect(() =>{
-
         //TODO Changer le nom de makesnap : fais pas de sens
         makeSnap();
 
@@ -61,7 +60,7 @@ export default function NasaFetcher(){
 
         //TODO ICI peut etre delete
 
-    }, [])
+    }, [date])
 
     if(!nasaData)return <div/>;
 
