@@ -72,7 +72,7 @@ export default function SignUp(props){
     }
 
     return(
-        <main className={styles.main}>
+        <main className="wrap" >
             {email === null ?
                 <div className="wrap" >
                     {newUser ?

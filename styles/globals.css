@@ -202,7 +202,7 @@ button.btn-logo {
 }
 .logger{
   background-color: #EBE1ED;
-  width: 500px;
+  width: 700px;
   height: 350px;
   align-items: center;
   text-align: center;
@@ -211,6 +211,7 @@ button.btn-logo {
   font-size: 1.3rem;
   color: black;
   margin: auto;
+
 }
 /* footer */
 
@@ -235,6 +236,10 @@ button.btn-logo {
   width: 70%;
 }
 .wrap{
-  width: 80%
+  margin-top: 10%;
+  height: 1000px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
 }
 
