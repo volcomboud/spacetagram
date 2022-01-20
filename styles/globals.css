@@ -197,9 +197,9 @@ button.btn-logo {
 .heart{
   font-size: 1.5rem;
 }
-/*.btn-logger{*/
-/*  margin-left: 35%;*/
-/*}*/
+.btn-logger{
+  margin-left: 30%;
+}
 .logger{
   background-color: #EBE1ED;
   max-width: 700px;
@@ -207,9 +207,8 @@ button.btn-logo {
   height: 350px;
   align-items: center;
   text-align: center;
-  justify-content: center;
   border-radius: 25px;
-  padding-top: 10%;
+  padding-top: 5%;
   font-size: 1.5rem;
   color: black;
 }
@@ -234,7 +233,6 @@ button.btn-logo {
 }
 .input{
   width: 70%;
-
 }
 
 
