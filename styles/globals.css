@@ -198,11 +198,11 @@ button.btn-logo {
   font-size: 1.5rem;
 }
 .btn-logger{
-  margin-left: 37%;
+  margin-left: 41%;
 }
 .logger{
   background-color: #EBE1ED;
-  width: 700px;
+  width: 40%;
   height: 350px;
   align-items: center;
   text-align: center;
@@ -237,7 +237,8 @@ button.btn-logo {
 }
 .wrap{
   margin-top: 10%;
-  height: 1000px;
+  margin-bottom: 18%;
+  height: 100%;
   width: 100%;
   align-items: center;
   text-align: center;
