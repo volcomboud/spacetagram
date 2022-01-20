@@ -74,7 +74,7 @@ export default function SignUp(props){
     return(
         <main className={styles.main}>
             {email === null ?
-                <div >
+                <div className="wrap" >
                     {newUser ?
                         <div className="logger">
                             <form>
@@ -89,6 +89,7 @@ export default function SignUp(props){
 
                                 <div>
                                     <input
+                                        className="input"
                                         type={"password"}
                                         placeholder="Password..."
                                         onChange={(event => setLoginPassword(event.target.value))}
@@ -108,12 +109,14 @@ export default function SignUp(props){
                             <h1>New space traveller</h1>
                             <div className="py-5">
                                 <input
+                                    className="input"
                                     placeholder="email..."
                                     onChange={(event => setRegisterEmail(event.target.value))}
                                 />
                             </div>
                             <div>
                                 <input
+                                    className="input"
                                     type={"password"}
                                     placeholder="Password..."
                                     onChange={(event => setRegisterPassword(event.target.value))}
