@@ -61,6 +61,7 @@ export default function Home(props) {
           {!loading && !postsEnd &&
             <button className="btn-black btn-show " onClick={getMorePosts}>show more</button>}
             <Loader show={loading}/>
+              
           {postsEnd && <label className="text-white text-3xl py-5">You&apos;ve reach the edge of the galaxy</label>}
 
       </main>

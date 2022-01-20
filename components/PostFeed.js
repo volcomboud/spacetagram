@@ -2,6 +2,7 @@ import {useState} from "react";
 import AuthCheck from "./AuthCheck";
 import HeartButton from './HeartButton';
 import Link from "next/link";
+import Image from 'next';
 
 
 export default function PostFeed(posts){
@@ -25,7 +26,7 @@ function PostItem({post}){
             <h2 className="card-title">
                 {post.title}
             </h2>
-            <img src={post.url} alt={post.title}/>
+            <Image src={post.url} alt={post.title}/>
             {show?
                 <div className="py-5 card-container">
                     <div className="card-explanation">
@@ -42,6 +43,7 @@ function PostItem({post}){
                     👽{post.heartCount || 0}
                     <AuthCheck
                         fallback={
+                            // eslint-disable-next-line @next/next/link-passhref
                         <Link href="/signup">
                             <button className="btn-black" >👽 Sign in </button>
                         </Link>
