@@ -110,7 +110,7 @@ export default function SignUp(props){
                                     placeholder="email..."
                                     onChange={(event => setRegisterEmail(event.target.value))}
                                 />
-                                </div>
+                            </div>
                             <div>
                                 <input
                                     type={"password"}
@@ -131,12 +131,14 @@ export default function SignUp(props){
                 :
                 <div>
                     <div className="logger">
-                        <h1>User logged In :</h1>
+                        <h1 className="py-16">User logged In :</h1>
                         {user?.email}
                     </div>
                     {!loading ?
 
-                <button className="btn-black btn-show btn-logger" onClick={logout}>Sign Out</button>
+                <button className="btn-black btn-show btn-logger "
+                        onClick={logout}>Sign Out</button>
+
                         :
                         <Loader show={loading}/>
                     }

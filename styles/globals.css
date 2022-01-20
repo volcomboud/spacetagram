@@ -202,9 +202,8 @@ button.btn-logo {
 }
 .logger{
   background-color: #EBE1ED;
-  min-width: 700px;
-  min-height: 400px;
-  max-height: 400px;
+  width: 700px;
+  height: 400px;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -232,3 +231,5 @@ button.btn-logo {
   font-size: 1.1rem;
   padding-top: 20px;
 }
+
+
