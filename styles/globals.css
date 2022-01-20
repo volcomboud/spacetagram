@@ -197,9 +197,9 @@ button.btn-logo {
 .heart{
   font-size: 1.5rem;
 }
-.btn-logger{
-  margin-left: 35%;
-}
+/*.btn-logger{*/
+/*  margin-left: 35%;*/
+/*}*/
 .logger{
   background-color: #EBE1ED;
   max-width: 700px;

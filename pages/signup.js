@@ -130,9 +130,9 @@ export default function SignUp(props){
 
                 </div>
                 :
-                <div>
-                    <div className="logger">
-                        <h1 className="py-5">User logged In :</h1>
+                <div className="logger">
+                    <div >
+                        <h1>User logged In :</h1>
                         {user?.email}
                     </div>
                     {!loading ?
