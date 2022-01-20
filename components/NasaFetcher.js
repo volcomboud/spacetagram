@@ -60,7 +60,7 @@ export default function NasaFetcher(){
 
         //TODO ICI peut etre delete
 
-    }, [date])
+    }, [dailyCollectionRef, q])
 
     if(!nasaData)return <div/>;
 
