@@ -1,10 +1,10 @@
-import Head from 'next/head'
 import Image from 'next/image'
+import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import NasaFetcher from "../components/NasaFetcher";
 import {useState} from "react";
 import PostFeed from "../components/PostFeed";
-import {db, postToJSON} from "../lib/firebase";
+import {db} from "../lib/firebase";
 import Loader from "../components/Loader";
 import {collection, getDocs, limit, orderBy, query, startAfter} from "firebase/firestore";
 

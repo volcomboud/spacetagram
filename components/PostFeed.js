@@ -17,7 +17,6 @@ function PostItem({post}){
     const showMore = () =>{
         if(show)setShow(false);
         else setShow(true)
-
     }
     return(
         <div className="card">

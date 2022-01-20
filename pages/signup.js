@@ -5,7 +5,7 @@ import {addDoc, collection} from "firebase/firestore";
 import {toast} from "react-hot-toast";
 import {UserContext} from "../lib/context";
 import styles from "../styles/Home.module.css";
-import {router} from "next/client";
+import {router} from "next/router";
 import Loader from "../components/Loader";
 import {useRouter} from "next/router";
 
