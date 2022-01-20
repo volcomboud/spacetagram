@@ -202,7 +202,7 @@ button.btn-logo {
 }
 .logger{
   background-color: #EBE1ED;
-  width: 700px;
+  max-width: 700px;
   height: 400px;
   align-items: center;
   text-align: center;
