@@ -81,6 +81,7 @@ export default function SignUp(props){
                                 <h1>Login</h1>
                                 <div className="py-5">
                                     <input
+                                        className="input"
                                         placeholder="email..."
                                         onChange={(event => setLoginEmail(event.target.value))}
                                     />
@@ -131,7 +132,7 @@ export default function SignUp(props){
                 :
                 <div>
                     <div className="logger">
-                        <h1 className="py-16">User logged In :</h1>
+                        <h1 className="py-5">User logged In :</h1>
                         {user?.email}
                     </div>
                     {!loading ?

@@ -198,12 +198,13 @@ button.btn-logo {
   font-size: 1.5rem;
 }
 .btn-logger{
-  margin-left: 40%;
+  margin-left: 35%;
 }
 .logger{
   background-color: #EBE1ED;
   max-width: 700px;
-  height: 300px;
+  width: 500px;
+  height: 350px;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -230,6 +231,10 @@ button.btn-logo {
   text-align: center;
   font-size: 1rem;
   padding-top: 10px;
+}
+.input{
+  width: 70%;
+
 }
 
 
