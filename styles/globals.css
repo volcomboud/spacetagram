@@ -203,7 +203,7 @@ button.btn-logo {
 .logger{
   background-color: #EBE1ED;
   max-width: 700px;
-  height: 400px;
+  height: 300px;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -228,8 +228,8 @@ button.btn-logo {
 .footer-text{
   color: #eaeaea;
   text-align: center;
-  font-size: 1.1rem;
-  padding-top: 20px;
+  font-size: 1rem;
+  padding-top: 10px;
 }
 
 
