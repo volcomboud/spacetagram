@@ -5,7 +5,7 @@ import {addDoc, collection} from "firebase/firestore";
 import {toast} from "react-hot-toast";
 import {UserContext} from "../lib/context";
 import styles from "../styles/Home.module.css";
-import {router} from "next/client";
+import {router} from "next/router";
 import Loader from "../components/Loader";
 import {useRouter} from "next/router";
 
@@ -72,15 +72,16 @@ export default function SignUp(props){
     }
 
     return(
-        <main className={styles.main}>
+        <main className="wrap" >
             {email === null ?
-                <div >
+                <div className="wrap" >
                     {newUser ?
                         <div className="logger">
                             <form>
                                 <h1>Login</h1>
                                 <div className="py-5">
                                     <input
+                                        className="input"
                                         placeholder="email..."
                                         onChange={(event => setLoginEmail(event.target.value))}
                                     />
@@ -88,6 +89,7 @@ export default function SignUp(props){
 
                                 <div>
                                     <input
+                                        className="input"
                                         type={"password"}
                                         placeholder="Password..."
                                         onChange={(event => setLoginPassword(event.target.value))}
@@ -107,12 +109,14 @@ export default function SignUp(props){
                             <h1>New space traveller</h1>
                             <div className="py-5">
                                 <input
+                                    className="input"
                                     placeholder="email..."
                                     onChange={(event => setRegisterEmail(event.target.value))}
                                 />
-                                </div>
+                            </div>
                             <div>
                                 <input
+                                    className="input"
                                     type={"password"}
                                     placeholder="Password..."
                                     onChange={(event => setRegisterPassword(event.target.value))}
@@ -129,14 +133,16 @@ export default function SignUp(props){
 
                 </div>
                 :
-                <div>
-                    <div className="logger">
+                <div className="logger">
+                    <div >
                         <h1>User logged In :</h1>
                         {user?.email}
                     </div>
                     {!loading ?
 
-                <button className="btn-black btn-show btn-logger" onClick={logout}>Sign Out</button>
+                <button className="btn-black btn-show btn-logger "
+                        onClick={logout}>Sign Out</button>
+
                         :
                         <Loader show={loading}/>
                     }
