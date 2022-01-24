@@ -43,6 +43,9 @@ export default function NasaFetcher(){
             }
             async function makeSnap() {
                 const querySnapshot = await getDocs(q);
+
+                //TODO LOG
+                console.log(querySnapshot, " Le query snapshot")
                 if(querySnapshot.empty){
                     pullData().then(r => {
                         console.log(r)
@@ -59,20 +62,21 @@ export default function NasaFetcher(){
                 }
             }
 
-        //TODO ICI peut etre delete
 
     }, [])
 
-    if(!nasaData)return <div/>;
+    //TODO peut etre delete
+    // if(!nasaData)return <div/>;
 
 
     return(
-        <div>
-            <img
-            src={nasaData.url}
-            alt={nasaData.title}/>
-        </div>
-
-
+        <>
+        </>
+        //TODO peut etre delete
+        // <div>
+        //     <img
+        //     src={nasaData.url}
+        //     alt={nasaData.title}/>
+        // </div>
     )
 }

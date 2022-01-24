@@ -65,7 +65,8 @@ export default function SignUp(props){
     const switchLogIn = () =>{
         if(newUser)setNewUser(false)
         else setNewUser(true)
-        setLoginPassword("calis")
+        setLoginPassword("")
+        // setLoginPassword("calis")  <-- OG
         setLoginEmail("")
         setRegisterPassword("")
         setRegisterEmail("")

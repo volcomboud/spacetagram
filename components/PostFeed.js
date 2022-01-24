@@ -1,6 +1,7 @@
 import {useState} from "react";
 import AuthCheck from "./AuthCheck";
 import HeartButton from './HeartButton';
+import Image from "next/image";
 import Link from "next/link";
 
 
@@ -9,7 +10,6 @@ export default function PostFeed(posts){
 }
 
 function PostItem({post}){
-    console.log(post, 'ICI')
     const [show, setShow]= useState(false)
 
     //TODO a    EFFACER
@@ -24,13 +24,18 @@ function PostItem({post}){
             <h2 className="card-title">
                 {post.title}
             </h2>
-            <img src={post.url} alt={post.title}/>
+            <Image src={post.url} alt={post.title} width="934" height="800" />
+            {/*<img src={post.url} alt={post.title}/>*/}
+
+
             {show?
-                <div className="py-5 card-container">
-                    <div className="card-explanation">
-                        <p className="explanation-p">{post.explanation}</p>
-                    </div>
+                <div>
                     <button className="btn-black" onClick={showMore}>Show less</button>
+                    <div className="py-5 card-container">
+                        <div className="card-explanation">
+                            <p className="explanation-p">{post.explanation}</p>
+                        </div>
+                    </div>
                 </div>
                 :
                 <button className="btn-black" onClick={showMore}>Description</button>

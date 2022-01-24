@@ -13,7 +13,6 @@ const dailyCollectionRef = collection(db,'nasadaily')
 
 //NEXTJS render side rendering
 export async function getServerSideProps(context){
-
     const postquery = query(dailyCollectionRef,orderBy('date','desc'),limit(LIMIT))
     const querySnapshot = await getDocs(postquery);
 
@@ -32,11 +31,9 @@ export default function Home(props) {
 
     const getMorePosts = async() =>{
         setLoading(true)
+
         const last = posts[posts.length -1];
-
-        const cursor = typeof last.date ==="string";
-
-        const morePostQuery = query(dailyCollectionRef,orderBy('date','desc'),startAfter(cursor),limit(LIMIT))
+        const morePostQuery = query(dailyCollectionRef,orderBy('date','desc'),startAfter(last["date"]),limit(LIMIT))
 
         const querySnapshot = await getDocs(morePostQuery);
         const newPosts = querySnapshot.docs.map((doc) => ({...doc.data()}));
