@@ -24,7 +24,7 @@ function PostItem({post}){
             <h2 className="card-title">
                 {post.title}
             </h2>
-            <Image src={post.url} alt={post.title} width="934" height="800" />
+            <Image src={post.url} alt={post.title} width="934" height="800" priority={true} />
             {/*<img src={post.url} alt={post.title}/>*/}
 
 
