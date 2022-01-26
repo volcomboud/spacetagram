@@ -177,7 +177,8 @@ button.btn-logo {
   background: var(--color-blue);
 }
 .card-container{
-  margin-top: 10px
+  margin-top: 10px;
+  overflow: hidden;
 
 }
 .card-explanation{
@@ -247,10 +248,10 @@ button.btn-logo {
 
 .video-responsive {
   overflow: hidden;
-  padding-bottom: 56.25%;
+  /*padding-bottom: 56.25%;*/
   position: relative;
-  height: 800px;
-  width: 934px;
+  max-height: 800px;
+  max-width: 934px;
 
 }
 
@@ -259,6 +260,6 @@ button.btn-logo {
   top: 0;
   height: 100%;
   width: 100%;
-  position: absolute;
+  /*position: absolute;*/
 }
 
