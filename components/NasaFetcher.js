@@ -46,19 +46,24 @@ export default function NasaFetcher(){
 
                 //TODO LOG
                 console.log(querySnapshot, " Le query snapshot")
-                if(querySnapshot.empty){
-                    pullData().then(r => {
-                        console.log(r)
-                        setNasaData(r);
-                        addToDatabase(r).then(() => {
-                            console.log("picture of the day added to the database")
+                if(querySnapshot.empty) {
+                    setTimeout(() =>{
+                    if (querySnapshot.empty) {
+                        pullData().then(r => {
+                            console.log(r)
+                            setNasaData(r);
+                            addToDatabase(r).then(() => {
+                                console.log("picture of the day added to the database")
+                            })
+                        });
+
+                    } else {
+                        querySnapshot.forEach((doc) => {
+                            console.log(doc.id, " => ", doc.data());
                         })
-                    });
-                }else {
-                    querySnapshot.forEach((doc) => {
-                        console.log(doc.id, " => ", doc.data());
-                    })
-                    console.log("Database is up to date...")
+                        console.log("Database is up to date...")
+                    }
+                    },1000);
                 }
             }
 

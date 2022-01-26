@@ -1,10 +1,9 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import AuthCheck from "./AuthCheck";
 import HeartButton from './HeartButton';
 import Image from "next/image";
 import Link from "next/link";
 import YoutubeEmbed from "./YoutubeEmbed";
-import {matchedText} from "next/dist/build/webpack/plugins/jsconfig-paths-plugin";
 
 
 export default function PostFeed(posts){
