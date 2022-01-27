@@ -39,9 +39,8 @@ function PostItem({post}){
     return(
         <div className="card">
            <strong className="card-date push-left">{post.date}</strong>
-            <h2 className="card-title">
-                {post.title}
-            </h2>
+            <h2 className="card-title">{post.title}</h2>
+
             {getDomain(post.url) === nasaUrl?
                 <Image src={post.url} alt={post.title} width="934" height="800" priority={true}/>
                 : <YoutubeEmbed srcUrl={post.url}

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const YoutubeEmbed = ({ srcUrl }) => (
+    <div className="w-">
     <div className="video-responsive">
         <iframe
             width="900"
@@ -12,6 +13,7 @@ const YoutubeEmbed = ({ srcUrl }) => (
             allowFullScreen
             title="Embedded youtube"
         />
+    </div>
     </div>
 );
 

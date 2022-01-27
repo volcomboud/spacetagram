@@ -88,13 +88,6 @@ a {
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-@media only screen and (max-width: 768px) {
-  button {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-}
-
 
 button:hover {
   filter: brightness(90%);
@@ -248,11 +241,23 @@ button.btn-logo {
 
 .video-responsive {
   overflow: hidden;
-  /*padding-bottom: 56.25%;*/
-  position: relative;
-  max-height: 800px;
-  max-width: 934px;
+  padding-bottom: 100%;
+  position:relative;
+  height: 800px;
+  width: 934px;
+}
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .video-responsive{
+    height: auto;
+    width: auto;
+  }
 }
 
 .video-responsive iframe {
@@ -260,6 +265,6 @@ button.btn-logo {
   top: 0;
   height: 100%;
   width: 100%;
-  /*position: absolute;*/
+  position: absolute;
 }
 

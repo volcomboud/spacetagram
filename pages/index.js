@@ -7,6 +7,7 @@ import PostFeed from "../components/PostFeed";
 import {db} from "../lib/firebase";
 import Loader from "../components/Loader";
 import {collection, getDocs, limit, orderBy, query, startAfter} from "firebase/firestore";
+import {toast} from "react-hot-toast";
 
 const LIMIT = 5;
 const dailyCollectionRef = collection(db,'nasadaily')
@@ -43,6 +44,7 @@ export default function Home(props) {
         setLoading(false);
 
         if(newPosts.length<LIMIT) setPostsEnd(true);
+        else toast.success("You ventured a little further")
     };
 
   return (

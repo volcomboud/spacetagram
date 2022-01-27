@@ -12,8 +12,9 @@ export default function NavBar(){
 
 
     const signOut = () => {
-        auth.signOut();
-        router.reload();
+        auth.signOut().then(
+            router.reload()
+        );
     }
 
     return(
@@ -36,9 +37,7 @@ export default function NavBar(){
                     <label>{user?.email}</label>
                 </li>
                 <li>
-                    <Link href="/signup">
-                        <button className="btn-black">Sign out</button>
-                    </Link>
+                        <button onClick={signOut} className="btn-black">Sign out</button>
                 </li>
                     </ul>
                 }
